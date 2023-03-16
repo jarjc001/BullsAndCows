@@ -13,6 +13,7 @@ public class BullsCowsServiceImpl implements BullsCowsService{
 
 
 
+
     @Override
     public List<Integer> generateNumbers() {
         Set<Integer> numbers = new LinkedHashSet<>();

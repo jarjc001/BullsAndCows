@@ -5,6 +5,12 @@ public class BullsCowsView {
     /**Declaration of the UserIO*/
     private UserIO io;
 
+    /**Constructor
+     * @param io UserIOConsoleImpl */
+    public BullsCowsView(UserIO io) {
+        this.io = io;
+    }
+
     /**
      * Prints the Main menu's options on console,
      * then returns an int of the user's choice
@@ -18,8 +24,7 @@ public class BullsCowsView {
         io.print("2. Make a guess");
         io.print("3. Return list of all games");
         io.print("4. Return specific game");
-        io.print("5. Return list of rounds");
-        io.print("6. Quit");
+        io.print("5. Quit");
         io.print("");
         io.print("-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-");
 
