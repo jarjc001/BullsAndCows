@@ -6,3 +6,14 @@
 DROP DATABASE IF EXISTS bullscows;
 CREATE DATABASE bullscows;
 USE bullscows;
+
+
+CREATE TABLE game(
+gameId int PRimary KEY AUTO_INCREMENT,
+numberOfGuessess int,
+answer varchar(4),
+won boolean);
+
+
+describe table game;
+SELECT * FROM game;
