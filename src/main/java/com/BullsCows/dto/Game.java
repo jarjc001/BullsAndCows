@@ -73,18 +73,8 @@ public class Game {
 
 
     //Setter
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    public void setAnswerInt(int answerInt) {
-        this.answerInt = answerInt;
-    }
     public void setWon(boolean won) {
         isWon = won;
-    }
-    public void setNumberOfGuesses(int numberOfGuesses) {
-        this.numberOfGuesses = numberOfGuesses;
     }
 
     /** set from a result object */

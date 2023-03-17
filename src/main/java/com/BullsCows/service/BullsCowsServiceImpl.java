@@ -21,6 +21,9 @@ public class BullsCowsServiceImpl implements BullsCowsService{
         this.dao = dao;
     }
 
+    /**Constructor for testing*/
+    public BullsCowsServiceImpl(){};
+
     @Override
     public List<Integer> generateNumbers() {
         Set<Integer> numbers = new LinkedHashSet<>();

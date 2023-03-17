@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game">
+    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="got game to work and adds details to database">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BullsCowsServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mySQL/BullsCowsDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mySQL/BullsCowsDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/controller/BullsCowsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/controller/BullsCowsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/GameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/GameMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/GameEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/GameProgress.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/BullsCowsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/BullsCowsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,16 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/theon/Documents/Important fouders/Wiley Edge Training/week 5 (JDBC)/JDBCTComplexExampleStarter&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/theon/Documents/Important fouders/Wiley Edge Training/week 5 (JDBC)/JDBCTComplexExampleStarter",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="Application.App">
+}]]></component>
+  <component name="RunManager" selected="JUnit.BullsCowsServiceTest.testWin">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.BullsCows.App" />
       <module name="BullsCows" />
@@ -87,8 +87,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BullsCowsServiceTest.testSingleRound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BullsCows" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BullsCowsServiceTest" />
+      <option name="METHOD_NAME" value="testSingleRound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BullsCowsServiceTest.testWin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BullsCows" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BullsCowsServiceTest" />
+      <option name="METHOD_NAME" value="testWin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BullsCowsServiceTest.testWin" />
+        <item itemvalue="JUnit.BullsCowsServiceTest.testSingleRound" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.BullsCowsServiceImpl" />
       </list>
@@ -124,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679016074247</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="got game to work and adds details to database">
+      <created>1679078137725</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679078137725</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,6 +161,7 @@
     <MESSAGE value="created service layer, holds the game logic: create answer and a single round of guessing&#10;added ui to be able to read inputs&#10;added jdbctemplate file" />
     <MESSAGE value="add skeleton of controller class" />
     <MESSAGE value="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game" />
+    <MESSAGE value="got game to work and adds details to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="got game to work and adds details to database" />
   </component>
 </project>

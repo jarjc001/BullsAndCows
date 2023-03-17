@@ -4,6 +4,7 @@ import com.BullsCows.dto.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Component
@@ -39,11 +40,12 @@ public class BullsCowsView {
 
     }
 
+    //play game
 
     /**display new game start
      */
     public void newGameBanner(){
-        io.print("=== New Game ===");
+        io.print("-+*+-+*+-+*+- New Game -+*+-+*+-+*+-");
     }
 
     /**
@@ -66,7 +68,6 @@ public class BullsCowsView {
         io.print("The answer is "+game.getAnswerInt());
     }
 
-
     /**
      * Prints a lost result to user
      * @param game current game
@@ -86,17 +87,55 @@ public class BullsCowsView {
     }
 
 
-
-
-
-    //get id of game wanted
     //display single game
 
+    public void getDisplaySingleGameBanner(){
+        io.print("-+*+-+*+-+*+-   Search Game   -+*+-+*+-+*+-");
+    }
+
+    /**Prompts the user for the Game Id,
+     * @return Game ID
+     */
+    public int askGameID (){
+        return io.readInt("Please enter Game ID:");
+    }
+
+    /**Print details of a single Game
+     * @param game game to display Game Details
+     */
+    public void displaySingleGameInfo(Game game){
+        io.print("Game ID: "+game.getId());
+        io.print("Number of Guesses: "+game.getNumberOfGuessesUsed());
+        io.print("Answer: "+game.getAnswerInt());
+        if(game.getIsWon()){
+            io.print("Win or Lose: Win");
+        }else{
+            io.print("Win or Lose: Lose");
+        }
+    }
 
 
-    //display all games
+    //All Games
+
+    public void getDisplayAllGamesBanner(){
+        io.print("-+*+-+*+-+*+-   All Games   -+*+-+*+-+*+-");
+    }
 
 
+    /**Displays the info of All Games for a given list array
+     * @param gameList List array of games to display
+     */
+    public void displayGameList(List<Game> gameList){
+        for (Game game:gameList){
+            io.print("-+*+-+*+-+*+-+*+-+*+-+*+-");
+            displaySingleGameInfo(game);
+        }
+    }
+
+
+
+
+    //error
 
 
     /**Prints the error message of the exception being thrown     *

@@ -1,5 +1,6 @@
 package com.BullsCows.controller;
 
+import com.BullsCows.dao.BullsCowsDataException;
 import com.BullsCows.dto.Game;
 import com.BullsCows.service.BullsCowsService;
 import com.BullsCows.ui.BullsCowsView;
@@ -80,21 +81,14 @@ public class BullsCowsController {
      * it will return not win result to database if the number of guesses run out.
      */
     private void startGame() {
-        System.out.println("not yet ready");
-
         view.newGameBanner();
-
         boolean gameFinished = false;
 
 //        //generate a new game
 //        Game currentGame = new Game(service.generateNumbers());
 
         //for testing
-        List<Integer> testGame = new ArrayList<>();
-        testGame.add(1);
-        testGame.add(3);
-        testGame.add(5);
-        testGame.add(7);
+        List<Integer> testGame = List.of(1,3,5,7);
         Game currentGame = new Game(testGame);
 
         while (!gameFinished){
@@ -118,45 +112,35 @@ public class BullsCowsController {
                     view.roundResult(currentGame);
                     break;
             }
-
         }
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-    private void makeGuess() {
-        System.out.println("not yet ready");
-        //print number of rounds left
-        //promt user for a input int -- use int list from io and view
-        //do the single test method from service
-        //do the check if rounds end from service -- if so, return result to database
     }
 
 
     /**Display the results of all the games in the database
      */
     private void displayListGame() {
-        System.out.println("not yet ready");
-        //from dao and service, get the list of all games
+        view.getDisplayAllGamesBanner();
+        view.displayGameList(service.displayAllGames());
     }
 
 
-    /**Display the results of a single game
+    /**Asks user for a game id,
+     * then will print the game details of that id.
+     * If no game exist for that id, it will display an error message
+     * and return user to main menu
      */
     private void displaySingleGame() {
-        System.out.println("not yet ready");
-        //promt user for either date or game id
-        //get lsit from dao
+        view.getDisplaySingleGameBanner();
+
+        try {
+            int searchGameID = view.askGameID();
+            Game game = service.displayGameFromId(searchGameID);
+            view.displaySingleGameInfo(game);
+
+        }catch (BullsCowsDataException e){
+            view.displayErrorMessage(e.getMessage());
+        }
+
     }
 
 
