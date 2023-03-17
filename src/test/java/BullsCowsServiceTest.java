@@ -76,7 +76,9 @@ public class BullsCowsServiceTest {
         Assertions.assertEquals(4,correct.getExact(),"Check if exact match is 1");
         Assertions.assertEquals(0,correct.getPartial(),"Check if partial match is 2");
 
+
         Assertions.assertEquals(testService.checkGameEnd(testGame), GameProgress.WIN,"Checking if it says user has won");
+        Assertions.assertTrue(testGame.getIsWon(),"Checking if Game object Has win result");
 
     }
 
