@@ -1,6 +1,6 @@
 package com.BullsCows.service;
 
-import com.BullsCows.dto.Result;
+import com.BullsCows.dto.Game;
 
 import java.util.List;
 
@@ -17,11 +17,11 @@ public interface BullsCowsService {
     /**
      * Does one round of the game, will compare the answer and the user's guess.
      * then will return the result, exact match and partial match
-     * @param answer the answer to guess
+     *
+     * @param game  the game object of current game
      * @param guess the user's guess
-     * @return result
      */
-    public Result singleRound(List<Integer> answer, List<Integer> guess);
+    public void singleRound(Game game, List<Integer> guess);
 
 
 

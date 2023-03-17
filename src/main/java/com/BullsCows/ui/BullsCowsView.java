@@ -1,5 +1,9 @@
 package com.BullsCows.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BullsCowsView {
 
     /**Declaration of the UserIO*/
@@ -7,6 +11,7 @@ public class BullsCowsView {
 
     /**Constructor
      * @param io UserIOConsoleImpl */
+    @Autowired
     public BullsCowsView(UserIO io) {
         this.io = io;
     }

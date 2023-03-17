@@ -1,5 +1,8 @@
 package com.BullsCows.dto;
 
+/**Tracks the game result of
+ *
+ */
 public class Result {
     private int exact;
     private int partial;

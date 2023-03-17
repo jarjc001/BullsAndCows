@@ -11,9 +11,9 @@ USE bullscows;
 CREATE TABLE game(
 gameId int PRimary KEY AUTO_INCREMENT,
 numberOfGuessess int,
-answer varchar(4),
+answer int,
 won boolean);
 
 
-describe table game;
+describe  game;
 SELECT * FROM game;
