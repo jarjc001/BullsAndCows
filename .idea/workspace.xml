@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="add skeleton of controller class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/GameMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/GameEnd.java" afterDir="false" />
+    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mySQL/BullsCowsDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mySQL/BullsCowsDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/controller/BullsCowsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/controller/BullsCowsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoSqlImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/BullsCowsDaoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/GameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dao/GameMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/dto/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/BullsCowsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/GameEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/service/GameProgress.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/BullsCowsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/BullsCowsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/ui/UserIOConsoleImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,13 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678963283644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game">
+      <created>1679016074247</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679016074247</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created service layer, holds the game logic: create answer and a single round of guessing&#10;added ui to be able to read inputs&#10;added jdbctemplate file" />
     <MESSAGE value="add skeleton of controller class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add skeleton of controller class" />
+    <MESSAGE value="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game" />
   </component>
 </project>

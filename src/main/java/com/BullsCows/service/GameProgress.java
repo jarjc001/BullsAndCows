@@ -1,5 +1,5 @@
 package com.BullsCows.service;
 
-public enum GameEnd {
+public enum GameProgress {
     WIN,LOST,NOT_FINISHED;
 }

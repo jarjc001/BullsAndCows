@@ -6,6 +6,12 @@ import java.util.List;
  */
 public class Game {
 
+    /**The amount of rounds in a game*/
+    public static final int AMOUNT_OF_ROUNDS = 10;
+
+    /**the amount of digits in the answer number*/
+    public static final int AMOUNT_OF_COWS = 4;
+
     private int id;
     private List<Integer> answerList;
     private int answerInt;
@@ -16,7 +22,7 @@ public class Game {
     /**
      * Constuctor for a single game of BullsCows.
      * Created at the start of a game
-     * @param answer the generated answer for the
+     * @param answer answer as  a list array
      */
     public Game(List<Integer> answer) {
         this.answerList = answer;
@@ -29,8 +35,8 @@ public class Game {
 
     /**Constructor for mapping Game from a data
      * @param id game id
-     * @param answer answer
-     * @param numberOfGuesses number of guesses
+     * @param answer answer as an int
+     * @param numberOfGuesses number of guesses left
      * @param isWon did user win
      */
     public Game(int id, int numberOfGuesses, int answer, boolean isWon) {
@@ -51,8 +57,11 @@ public class Game {
     public int getAnswerInt() {
         return answerInt;
     }
-    public int getNumberOfGuesses() {
+    public int getNumberOfGuessesUsed() {
         return this.numberOfGuesses;
+    }
+    public int getNumberOfGuessesLeft() {
+        return (AMOUNT_OF_ROUNDS-this.numberOfGuesses);
     }
     public boolean getIsWon() {
         return this.isWon;
@@ -60,6 +69,7 @@ public class Game {
     public Result getGameResult() {
         return gameResult;
     }
+
 
 
     //Setter
@@ -97,11 +107,12 @@ public class Game {
     public void convertAnswerListInt(){
         int res = 0;
         for (int i: this.answerList){
-            res=res*10+i;
+            res=(res*10)+i;
         }
         this.answerInt = res;
     }
 
+    /** keeps track of guesses*/
     public void countGuess(){
         this.numberOfGuesses++;
     }

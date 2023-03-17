@@ -10,7 +10,7 @@ USE bullscows;
 
 CREATE TABLE game(
 gameId int PRimary KEY AUTO_INCREMENT,
-numberOfGuessess int,
+numberOfGuesses int,
 answer int,
 won boolean);
 

@@ -21,7 +21,7 @@ public class BullsCowsDaoDB implements BullsCowsDao{
         //SQL query to insert a game object into data base
         final String INSERT_GAME = "INSERT INTO game(numberOfGuesses, answer, won) VALUES(?,?,?)";
         jdbc.update(INSERT_GAME,
-                game.getNumberOfGuesses(),
+                game.getNumberOfGuessesUsed(),
                 game.getAnswerInt(),
                 game.getIsWon());
     }

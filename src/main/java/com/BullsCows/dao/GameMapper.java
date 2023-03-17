@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public final class GameMapper implements RowMapper<Game> {
 
+    /**Maps the data from a line of the Database into a Game object.
+     */
     @Override
     public Game mapRow(ResultSet rs, int index) throws SQLException {
         Game newGame = new Game(
