@@ -46,5 +46,13 @@ public class BullsCowsDaoDB implements BullsCowsDao{
         //returns a List of Game objects of all games
         return jdbc.query(SELECT_ALL_GAMES, new GameMapper());
     }
+
+    @Override
+    public void clearDatabase() {
+
+        final String DELETE_CONTENTS = "TRUNCATE TABLE game;";
+        jdbc.update(DELETE_CONTENTS);
+
+    }
 }
 

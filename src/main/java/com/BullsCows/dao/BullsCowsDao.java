@@ -27,4 +27,9 @@ public interface BullsCowsDao {
     List<Game> getAllGames();
 
 
+    /**Clears the whole database, used for testing
+     */
+    public void clearDatabase() ;
+
+
 }

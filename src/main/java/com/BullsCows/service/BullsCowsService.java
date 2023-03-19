@@ -3,6 +3,7 @@ package com.BullsCows.service;
 import com.BullsCows.dao.BullsCowsDataException;
 import com.BullsCows.dto.Game;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface BullsCowsService {
@@ -14,6 +15,12 @@ public interface BullsCowsService {
      * @return a list array of the numbers to guess
      */
     public List<Integer> generateNumbers();
+
+    /**takes an int input and converts it into a List array of its digits
+     * @param number - int to be converted
+     * @return a list array of digits
+     */
+    public ArrayList<Integer> convertGuessToListArray (int number);
 
     /**
      * Does one round of the game, will compare the answer and the user's guess.

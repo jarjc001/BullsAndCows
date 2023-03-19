@@ -36,11 +36,8 @@ public class BullsCowsServiceImpl implements BullsCowsService{
     }
 
 
-    /**takes an int input and converts it into a List array of its digits
-     * @param number - int to be converted
-     * @return a list array of digits
-     */
-    private ArrayList<Integer> convertGuessToListArray (int number){
+    @Override
+    public ArrayList<Integer> convertGuessToListArray (int number){
         ArrayList<Integer> array = new ArrayList<Integer>();
 
         do{

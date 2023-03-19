@@ -29,7 +29,7 @@ public class BullsCowsController {
     public BullsCowsController(BullsCowsView view, BullsCowsService service) {
         this.view = view;
         this.service = service;
-       // this.run();
+        this.run();                   //<- remove comment to allow app to work from console only
     }
 
 
@@ -125,10 +125,9 @@ public class BullsCowsController {
      */
     @PostMapping("/startNewGame")
     @ResponseStatus(HttpStatus.CREATED)
-    public Game startNewGame(){
-      // List<Integer> testNumbers = service.generateNumbers();
+    private Game startNewGame(){
+        List<Integer> testNumbers = service.generateNumbers();
 
-        List<Integer> testNumbers = List.of(1,3,5,7);
         currentGame = new Game(testNumbers);
         return currentGame;
     }
@@ -138,7 +137,7 @@ public class BullsCowsController {
      * @return the string result of the guess
      */
     @PostMapping("/makeGuess")
-    public String playSingleRound(int userGuess){
+    private String playSingleRound(int userGuess){
         service.singleRound(currentGame,userGuess);
         return currentGame.getGameResult().toString();
 
@@ -151,7 +150,7 @@ public class BullsCowsController {
      * @return the list of all the games
      */
     @GetMapping("/allGames")
-    public List<Game> displayListGame() {
+    private List<Game> displayListGame() {
         view.getDisplayAllGamesBanner();
         view.displayGameList(service.displayAllGames());
         return service.displayAllGames();
@@ -180,7 +179,7 @@ public class BullsCowsController {
      * @return the game
      */
     @GetMapping("/getSingleGame/{id}")
-    public Game showSinlgeGame (@PathVariable int id) throws BullsCowsDataException {
+    private Game showSinlgeGame (@PathVariable int id) throws BullsCowsDataException {
         Game game = service.displayGameFromId(id);
         view.displaySingleGameInfo(game);
         return game;

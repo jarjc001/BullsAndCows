@@ -1,6 +1,7 @@
 package com.BullsCows.dto;
 
 import java.util.List;
+import java.util.Objects;
 
 /**GAme object to keep track of a single game of Bulls Cows
  */
@@ -130,4 +131,16 @@ public class Game {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return id == game.id && answerInt == game.answerInt && numberOfGuesses == game.numberOfGuesses && isWon == game.isWon && Objects.equals(answerList, game.answerList) && Objects.equals(gameResult, game.gameResult);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, answerList, answerInt, numberOfGuesses, gameResult, isWon);
+    }
 }
