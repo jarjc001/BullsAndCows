@@ -36,7 +36,7 @@ public class BullsCowsView {
         io.print("");
         io.print("-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-+*+-");
 
-        return io.readInt("", 1, 6);
+        return io.readInt("", 1, 4);
 
     }
 

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.exit;
+
 @Component
 public class BullsCowsController {
 
@@ -66,6 +68,7 @@ public class BullsCowsController {
 
         }
         System.out.println("Good Bye!");
+
 
     }
 

@@ -22,6 +22,15 @@
     </parent>
 
     <dependencies>
+
+        <!--Can cause it not to be able to exit -->
+        <!--Enables and configures Spring MVC. -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+
+
         <!--Database dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,6 +53,13 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Boot Dev Tools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 </project>

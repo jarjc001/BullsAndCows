@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="finished display and added tests for service">
+    <list default="true" id="e8b72593-f258-4477-9f77-23fb84bff7a0" name="Changes" comment="fixed pom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BullsCows/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BullsCows/App.java" afterDir="false" />
@@ -151,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679082946718</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed pom">
+      <created>1679190993842</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679190993842</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,6 +168,7 @@
     <MESSAGE value="added dao to springboot and db (app runs from spring boot)&#10;added all 3 methods to dao&#10;added exception to dao&#10;edited service to include a check game finish&#10;edited dto to have result to be inside game" />
     <MESSAGE value="got game to work and adds details to database" />
     <MESSAGE value="finished display and added tests for service" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished display and added tests for service" />
+    <MESSAGE value="fixed pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed pom" />
   </component>
 </project>
