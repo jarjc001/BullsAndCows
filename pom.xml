@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>2.1.0.RELEASE</version>
         <relativePath />
     </parent>
 
@@ -25,10 +25,10 @@
 
         <!--Can cause it not to be able to exit -->
         <!--Enables and configures Spring MVC. -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
 
         <!--Database dependencies -->
@@ -54,6 +54,7 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
 
         <!-- Spring Boot Dev Tools -->
         <dependency>

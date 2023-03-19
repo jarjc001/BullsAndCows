@@ -35,16 +35,33 @@ public class BullsCowsServiceImpl implements BullsCowsService{
         return new ArrayList<>(numbers);
     }
 
+
+    /**takes an int input and converts it into a List array of its digits
+     * @param number - int to be converted
+     * @return a list array of digits
+     */
+    private ArrayList<Integer> convertGuessToListArray (int number){
+        ArrayList<Integer> array = new ArrayList<Integer>();
+
+        do{
+            array.add(0,number % 10); //gets the smallest digit
+            number /= 10;       //removes the smallest digit
+        } while (number > 0);
+        return array;
+    }
+
     @Override
-    public void singleRound(Game game, List<Integer> guess) {
+    public void singleRound(Game game, int guess) {
         Result result = new Result();
         int indexCounter = 0;
 
+        ArrayList<Integer> guessArray = convertGuessToListArray(guess);
+
         for (int answerInt:game.getAnswerList()){
             //checks if the guess has one of the answer's numbers
-            if(guess.contains(answerInt)){
+            if(guessArray.contains(answerInt)){
                 //checks if the answer is in same position as the guess
-                if(guess.get(indexCounter)==answerInt){
+                if(guessArray.get(indexCounter)==answerInt){
                     result.setExact(result.getExact()+1);
                 }else{
                     result.setPartial(result.getPartial()+1);

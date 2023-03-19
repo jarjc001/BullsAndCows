@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "5a4b173b-1863-49b2-ade5-731a73c7d515",
+		"name": "Bulls Cows",
+		"description": "REST endpoints of the Bulls cows game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/bullscows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bullscows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bullscows"
+					]
+				},
+				"description": "Start app"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/bullscows/startNewGame",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bullscows/startNewGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bullscows",
+						"startNewGame"
+					]
+				},
+				"description": "Start a new Game"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/bullscows/makeGuess",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userGuess",
+							"value": "1234",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bullscows/makeGuess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bullscows",
+						"makeGuess"
+					]
+				},
+				"description": "make a guess"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/bullscows/allGames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bullscows/allGames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bullscows",
+						"allGames"
+					]
+				},
+				"description": "get a list of all games"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/bullscows/getSingleGame/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bullscows/getSingleGame/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bullscows",
+						"getSingleGame",
+						"2"
+					]
+				},
+				"description": "get a game from an ID"
+			},
+			"response": []
+		}
+	]
+}

@@ -38,12 +38,5 @@ public interface UserIO {
      */
     int readInt(String prompt, int min, int max);
 
-    /*** Takes in a String prompt to display to the user on the console,
-     * Will then Read an int input the user enters into the console,
-     * then will return said int as a List array of its digits
-     * @param prompt - String prompt to be displayed on console
-     * @return the answer of the prompt as a list array of digits
-     */
-    List<Integer> readIntList(String prompt);
 
 }

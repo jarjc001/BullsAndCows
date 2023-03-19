@@ -22,7 +22,7 @@ public interface BullsCowsService {
      * @param game  the game object of current game
      * @param guess the user's guess
      */
-    public void singleRound(Game game, List<Integer> guess);
+    public void singleRound(Game game, int guess);
 
     /**
      * Checks to see if the game has ended, whether the user guessed correctly or ran out of guesses

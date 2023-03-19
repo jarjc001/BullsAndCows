@@ -5,27 +5,31 @@ import com.BullsCows.dto.Game;
 import com.BullsCows.service.BullsCowsService;
 import com.BullsCows.ui.BullsCowsView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.System.exit;
-
-@Component
+@RestController
+@RequestMapping("/api/bullscows")
 public class BullsCowsController {
 
+    /**Game Object of the current game in progress*/
+    Game currentGame;
+
+
     /** Declaration of the View */
-    private BullsCowsView view;
+    private final BullsCowsView view;
     /** Declaration of the Service */
-    private BullsCowsService service;
+    private final BullsCowsService service;
 
     /** constructor*/
     @Autowired
     public BullsCowsController(BullsCowsView view, BullsCowsService service) {
         this.view = view;
         this.service = service;
-        this.runApp();
+       // this.run();
     }
 
 
@@ -39,8 +43,8 @@ public class BullsCowsController {
     }
 
 
-
-    public void runApp(){
+    @GetMapping()
+    public void run(){
 
 
         boolean keepRunning = true;
@@ -68,6 +72,7 @@ public class BullsCowsController {
 
         }
         System.out.println("Good Bye!");
+        System.exit(0);
 
 
     }
@@ -87,18 +92,13 @@ public class BullsCowsController {
         view.newGameBanner();
         boolean gameFinished = false;
 
-//        //generate a new game
-//        Game currentGame = new Game(service.generateNumbers());
-
-        //for testing
-        List<Integer> testGame = List.of(1,3,5,7);
-        Game currentGame = new Game(testGame);
+        startNewGame();
 
         while (!gameFinished){
             //prompt user for guess
-            List<Integer> userGuess = view.promptGuess(currentGame);
+            int userGuess = view.promptGuess(currentGame);
 
-            service.singleRound(currentGame,userGuess);
+            playSingleRound(userGuess);
 
             switch (service.checkGameEnd(currentGame)){
                 case WIN:
@@ -119,11 +119,42 @@ public class BullsCowsController {
     }
 
 
-    /**Display the results of all the games in the database
+    //put in service
+
+    /**Starts a new game by initialing a new game object for the class currentGame object
      */
-    private void displayListGame() {
+    @PostMapping("/startNewGame")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Game startNewGame(){
+      // List<Integer> testNumbers = service.generateNumbers();
+
+        List<Integer> testNumbers = List.of(1,3,5,7);
+        currentGame = new Game(testNumbers);
+        return currentGame;
+    }
+
+    /** Makes a single guess for the current game object, and returns the result of the guess as a string
+     * @param userGuess the guess as an int
+     * @return the string result of the guess
+     */
+    @PostMapping("/makeGuess")
+    public String playSingleRound(int userGuess){
+        service.singleRound(currentGame,userGuess);
+        return currentGame.getGameResult().toString();
+
+    }
+
+
+
+    /**
+     * Display the results of all the games in the database
+     * @return the list of all the games
+     */
+    @GetMapping("/allGames")
+    public List<Game> displayListGame() {
         view.getDisplayAllGamesBanner();
         view.displayGameList(service.displayAllGames());
+        return service.displayAllGames();
     }
 
 
@@ -134,17 +165,29 @@ public class BullsCowsController {
      */
     private void displaySingleGame() {
         view.getDisplaySingleGameBanner();
-
         try {
             int searchGameID = view.askGameID();
-            Game game = service.displayGameFromId(searchGameID);
-            view.displaySingleGameInfo(game);
+            Game game = showSinlgeGame(searchGameID);
 
         }catch (BullsCowsDataException e){
             view.displayErrorMessage(e.getMessage());
         }
-
     }
+
+
+    /**From a game id, will get the game from the Data base
+     * @param id id of game wanted to get
+     * @return the game
+     */
+    @GetMapping("/getSingleGame/{id}")
+    public Game showSinlgeGame (@PathVariable int id) throws BullsCowsDataException {
+        Game game = service.displayGameFromId(id);
+        view.displaySingleGameInfo(game);
+        return game;
+    }
+
+
+
 
 
 }

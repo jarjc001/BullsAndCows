@@ -33,7 +33,7 @@ public class BullsCowsServiceTest {
 
 
         // a guess that is fully wrong
-        List<Integer> testGuessFullyWrong = List.of(2,4,6,8);
+        int testGuessFullyWrong = 2468;
         testService.singleRound(testGame,testGuessFullyWrong);
 
         Result fullyWrong = testGame.getGameResult();
@@ -47,7 +47,7 @@ public class BullsCowsServiceTest {
         //test when answer is Partially wrong
 
         //a guess that is Partially Wrong should have 1 exact match and 2 partial matches
-        List<Integer> testGuessPartialWrong = List.of(1,5,7,8);
+        int testGuessPartialWrong = 1578;
         testService.singleRound(testGame,testGuessPartialWrong);
 
         Result PartiallyWrong = testGame.getGameResult();
@@ -69,7 +69,7 @@ public class BullsCowsServiceTest {
         Game testGame = new Game(testAnswer);
 
         //Guesses with the answer
-        testService.singleRound(testGame,testAnswer);
+        testService.singleRound(testGame,testGame.getAnswerInt());
 
         Result correct = testGame.getGameResult();
 

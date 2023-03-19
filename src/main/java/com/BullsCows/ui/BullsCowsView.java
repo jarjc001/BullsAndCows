@@ -54,8 +54,8 @@ public class BullsCowsView {
      * @param game the current game
      * @return the user's guess
      */
-    public List<Integer> promptGuess(Game game){
-        return io.readIntList("Make a Guess ("+game.getNumberOfGuessesLeft()+" guesses remaining):");
+    public int promptGuess(Game game){
+        return io.readInt("Make a Guess ("+game.getNumberOfGuessesLeft()+" guesses remaining):");
     }
 
 
@@ -104,6 +104,7 @@ public class BullsCowsView {
      * @param game game to display Game Details
      */
     public void displaySingleGameInfo(Game game){
+        io.print("-+*+-+*+-+*+-+*+-+*+-+*+-");
         io.print("Game ID: "+game.getId());
         io.print("Number of Guesses: "+game.getNumberOfGuessesUsed());
         io.print("Answer: "+game.getAnswerInt());
@@ -127,7 +128,6 @@ public class BullsCowsView {
      */
     public void displayGameList(List<Game> gameList){
         for (Game game:gameList){
-            io.print("-+*+-+*+-+*+-+*+-+*+-+*+-");
             displaySingleGameInfo(game);
         }
     }

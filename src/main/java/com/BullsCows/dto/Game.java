@@ -48,6 +48,12 @@ public class Game {
 
     //getters
 
+    public int getNumberOfGuesses() {
+        return numberOfGuesses;
+    }
+    public boolean isWon() {
+        return isWon;
+    }
     public int getId() {
         return id;
     }
@@ -75,6 +81,22 @@ public class Game {
     //Setter
     public void setWon(boolean won) {
         isWon = won;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAnswerList(List<Integer> answerList) {
+        this.answerList = answerList;
+    }
+
+    public void setAnswerInt(int answerInt) {
+        this.answerInt = answerInt;
+    }
+
+    public void setNumberOfGuesses(int numberOfGuesses) {
+        this.numberOfGuesses = numberOfGuesses;
     }
 
     /** set from a result object */

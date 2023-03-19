@@ -55,17 +55,6 @@ public class UserIOConsoleImpl implements UserIO{
 
     }
 
-    @Override
-    public List<Integer> readIntList(String prompt) {
-        int result = readInt(prompt);
-        ArrayList<Integer> array = new ArrayList<Integer>();
-
-        do{
-            array.add(0,result % 10); //gets the smallest digit
-            result /= 10;       //removes the smallest digit
-        } while (result > 0);
-        return array;
-    }
 
 
 }
