@@ -45,7 +45,7 @@ public class BullsCowsController {
 
 
     /**
-     *
+     *The main run method to start the app
      */
     @GetMapping()
     public void run(){

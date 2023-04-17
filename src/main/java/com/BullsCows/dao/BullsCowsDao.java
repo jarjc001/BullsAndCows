@@ -9,6 +9,7 @@ public interface BullsCowsDao {
     /**
      * Adds a completed game to the Database,
      * it adds it answer, number of guess and if they won or not
+     * @param game game object
      */
     void addGame (Game game);
 
@@ -17,6 +18,7 @@ public interface BullsCowsDao {
      * If the game id is not in database, it will return an exception
      * @param id game id of game info want to find
      * @return the game object of given id
+     * @throws BullsCowsDataException Exception
      */
     Game getGameFromId (int id) throws BullsCowsDataException;
 
@@ -28,6 +30,7 @@ public interface BullsCowsDao {
 
 
     /**Clears the whole database, used for testing
+     * @param id id
      */
     public void clearDatabase(int id) ;
 

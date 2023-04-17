@@ -49,6 +49,7 @@ public interface BullsCowsService {
      *Gets a game object for a game saved in the database from its game id
      * @param id Game id of game wanted to how info
      * @return game object of game info
+     * @throws BullsCowsDataException Exception
      */
     public Game displayGameFromId (int id) throws BullsCowsDataException;
 
