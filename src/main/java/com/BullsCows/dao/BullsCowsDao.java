@@ -29,7 +29,7 @@ public interface BullsCowsDao {
 
     /**Clears the whole database, used for testing
      */
-    public void clearDatabase() ;
+    public void clearDatabase(int id) ;
 
 
 }

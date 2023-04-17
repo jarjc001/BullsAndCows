@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.BullsCows"},{"l":"com.BullsCows.controller"},{"l":"com.BullsCows.dao"},{"l":"com.BullsCows.dto"},{"l":"com.BullsCows.service"},{"l":"com.BullsCows.ui"}]

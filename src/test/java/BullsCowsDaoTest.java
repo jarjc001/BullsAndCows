@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.List;
+
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = TestApplicationConfiguration.class)
 public class BullsCowsDaoTest {
@@ -22,8 +24,11 @@ public class BullsCowsDaoTest {
 
     @Before
     public void setUp() {
+        List<Game> games = dao.getAllGames();
+        for (Game game : games){
+            dao.clearDatabase(game.getId());
+        }
 
-        dao.clearDatabase();
     }
 
     @Test

@@ -1,5 +1,7 @@
 package com.BullsCows;
 
+import com.BullsCows.dao.BullsCowsDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,5 +13,6 @@ import org.springframework.context.annotation.FilterType;
         value = CommandLineRunner.class))
 @EnableAutoConfiguration
 public class TestApplicationConfiguration {
+
 
 }

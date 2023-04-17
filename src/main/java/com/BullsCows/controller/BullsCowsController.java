@@ -29,7 +29,8 @@ public class BullsCowsController {
     public BullsCowsController(BullsCowsView view, BullsCowsService service) {
         this.view = view;
         this.service = service;
-        this.run();                   //<- remove comment to allow app to work from console only
+        //this.run();                   //<- remove comment to allow app to work from console only
+        //System.exit(0);
     }
 
 
@@ -43,6 +44,9 @@ public class BullsCowsController {
     }
 
 
+    /**
+     *
+     */
     @GetMapping()
     public void run(){
 

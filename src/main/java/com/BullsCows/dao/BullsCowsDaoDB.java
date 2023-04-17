@@ -48,10 +48,10 @@ public class BullsCowsDaoDB implements BullsCowsDao{
     }
 
     @Override
-    public void clearDatabase() {
+    public void clearDatabase(int id) {
 
-        final String DELETE_CONTENTS = "TRUNCATE TABLE game;";
-        jdbc.update(DELETE_CONTENTS);
+        final String DELETE_CONTENTS = "DELETE FROM game WHERE gameId = ?";
+        jdbc.update(DELETE_CONTENTS, id);
 
     }
 }
